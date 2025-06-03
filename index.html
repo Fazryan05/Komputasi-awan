@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <head>
   <meta charset="UTF-8" />
@@ -7,11 +8,12 @@
   <title>KopiKita - Kafe Kopi</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f3f2ef;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #e0d6c6, #f7f3ee);
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  scroll-behavior: smooth;
     }
 
     header {
@@ -23,24 +25,216 @@
   align-items: center;
 }
 
+.hero-header {
+  background: url("coffee-grains-out-glass-jar.jpg") center/cover no-repeat;
+  height: 100vh;
+  position: relative;
+  color: white;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  text-align: center;
+  padding: 20px;
+  max-width: 600px;
+}
+
+.hero-logo {
+  width: 100px;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero-content .btn {
+  background: linear-gradient(135deg, #6f4e37, #a47149);
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
 
 
 
     nav {
-      background-color: #4b382a;
-      padding: 10px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+     background: rgba(75, 56, 42, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
+      color: #fff;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease;
     }
+
+    nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #ffddb0;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffddb0;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.navbar {
+  background: rgba(75, 56, 42, 0.85);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.nav-logo img {
+  height: 40px;
+  filter: brightness(0) invert(1);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffddb0;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: #ffddb0;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.nav-icon span,
+.nav-icon span::before,
+.nav-icon span::after {
+  background: #fff;
+  display: block;
+  height: 2px;
+  width: 25px;
+  border-radius: 2px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav-icon span::before,
+.nav-icon span::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-icon span::before {
+  top: -8px;
+}
+
+.nav-icon span::after {
+  top: 8px;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: #4b382a;
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-toggle:checked + .nav-icon + .nav-links {
+    display: flex;
+  }
+
+  .nav-icon {
+    display: flex;
+  }
+}
 
     .container {
       padding: 40px 20px;
@@ -54,11 +248,15 @@
 
     .item {
       background-color: white;
-      padding: 5px;
-      border-radius: 2px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
+    }.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
     .item img {
       width: 100%;
       border-radius: 15px;
@@ -66,21 +264,22 @@
 
     .btn {
       display: inline-block;
-      background-color: #6f4e37;
-      color: white;
-      padding: 10px 15px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      cursor: pointer;
+  background: linear-gradient(135deg, #6f4e37, #a47149);
+  color: white;
+  padding: 12px 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .about, .contact {
-      background-color: white;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-left: 5px solid #6f4e37;
+  background: #fffaf5;
+
     }
 
     .contact form {
@@ -130,7 +329,12 @@
       max-width: 400px;
       border-radius: 8px;
       position: relative;
+      animation: fadeInUp 0.3s ease;
     }
+    @keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
     .modal-content h3 {
       margin-top: 0;
@@ -143,22 +347,41 @@
       font-size: 20px;
       cursor: pointer;
       color: #888;
+
+  
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="Untitled-2.png" alt="Logo KopiKita" style="height: 200px; filter: brightness(0) invert(1);">
-  </header>
-  
-  
+<header class="hero-header">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <img src="Untitled-2.png" alt="Logo KopiKita" class="hero-logo">
+      <h1>KopiKita</h1>
+      <p>Nikmati cita rasa kopi lokal terbaik</p>
+      <a href="#menu" class="btn">Lihat Menu</a>
+    </div>
+  </div>
+</header>
 
-  <nav>
-    <a href="#menu">Menu</a>
-    <a href="#about">Tentang Kami</a>
-    <a href="#contact">Kontak</a>
-  </nav>
+  
+  <nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <img src="Untitled-2.png" alt="KopiKita Logo" />
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-icon">
+      <span></span>
+    </label>
+    <ul class="nav-links">
+      <li><a href="#menu"><i class="fas fa-mug-hot"></i> Menu</a></li>
+      <li><a href="#about"><i class="fas fa-info-circle"></i> Tentang</a></li>
+      <li><a href="#contact"><i class="fas fa-phone"></i> Kontak</a></li>
+    </ul>
+  </div>
+</nav>
 
   <div class="container">
     <section id="menu">
@@ -295,6 +518,7 @@
         document.getElementById("orderForm").reset();
       }, 2000);
     });
+
   </script>
 
 </body>
