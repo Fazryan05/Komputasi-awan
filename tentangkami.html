@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styletentang.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kopi Kita</title>
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <img src="Kopi kita logo 2.png" alt="KopiKita Logo" />
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-icon">
+      <span></span>
+    </label>
+    <ul class="nav-links">
+      <li><a href="home.html"></i> Home</a></li>
+      <li><a href="menu.html"></i> Menu</a></li>
+      <li><a href="tentangkami.html"></i> Tentang</a></li>
+    </ul>
+  </div>
+<section id="tentang-kami" class="fade-in">
+  <div class="tentang-container">
+    <div class="tentang-text">
+      <h2>Tentang Kami</h2>
+      <p id="typing-text" data-text="KopiKita hadir dengan semangat menyajikan kopi terbaik dari biji pilihan Nusantara. Kami percaya setiap cangkir kopi menyimpan cerita, inspirasi, dan semangat kebersamaan. Dengan atmosfer yang nyaman dan rasa yang otentik, KopiKita adalah tempat berkumpulnya rasa dan cerita."></p>
+
+       <hr class="divider">
+</div>
+    </div>
+    <div class="visi-misi-container">
+    <div class="visi fade-in delay-0">
+      <h3>Visi</h3>
+      <p>Menjadi kafe kopi lokal terbaik yang menyatukan rasa, komunitas, dan budaya Indonesia dalam setiap cangkir kopi.</p>
+    </div>
+    <div class="misi fade-in delay-1">
+      <h3>Misi</h3>
+      <ul>
+        <li>Menghadirkan kopi berkualitas dari petani lokal secara berkelanjutan.</li>
+        <li>Menciptakan ruang nyaman dan inspiratif untuk semua kalangan.</li>
+        <li>Mendukung kreativitas dan pertumbuhan komunitas lokal.</li>
+        <li>Mengedepankan pelayanan ramah dan pengalaman berkesan bagi pelanggan.</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <img src="Kopi kita logo 2.png" alt="Kopi Kita Logo" class="footer-logo">
+      <p>Menemani harimu dengan cita rasa kopi terbaik. Kopi Kita, pilihan kopi lokal berkualitas.</p>
+    </div>
+    <div class="footer-column">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="tentangkami.html">Tentang Kami</a></li>
+        <li><a href="#">Hubungi Kami</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Ikuti Kami</h4>
+      <div class="sosial-media">
+        <a href="#"><img src="icon-facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="icon-instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="icon-twitter.svg" alt="Twitter"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+     &copy; 2025 Kelompok 5. Kopi Kita
+  </div>
+</footer>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  const header = document.querySelector('.tentang-text h2');
+  if (header) observer.observe(header);
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const typingElement = document.getElementById("typing-text");
+  const text = typingElement.dataset.text; // Ambil dari data-text
+  typingElement.innerText = ""; // Kosongkan isi <p>
+
+  let index = 0;
+  function typeText() {
+    if (index < text.length) {
+      typingElement.innerText += text.charAt(index);
+      index++;
+      setTimeout(typeText, 30);
+    }
+  }
+
+  const observerTyping = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        typeText();
+        observerTyping.unobserve(typingElement);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observerTyping.observe(typingElement);
+});
+</script>
+
+</body>
+</html>

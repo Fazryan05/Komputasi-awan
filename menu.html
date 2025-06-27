@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="stylesheet" href="stylemenu.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KopiKita - Kafe Kopi</title>
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <img src="Kopi kita logo 2.png" alt="KopiKita Logo" />
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-icon">
+      <span></span>
+    </label>
+    <ul class="nav-links">
+      <li><a href="home.html"></i> Home</a></li>
+      <li><a href="#menu"></i> Menu</a></li>
+      <li><a href="tentangkami.html" id="nav-tentang"></i>Tentang</a></li>
+    </ul>
+  </div>
+</nav>
+<header>
+    <video autoplay muted loop>
+      <source src="menu coffee.mp4" type="video/mp4">
+    </video>
+   <div class="header-content">
+      <p>Dari biji kopi terbaik, kami hadirkan racikan sempurna--- Jelajahi menu kami dan temukan cita rasa favorit Anda.</p>
+    </div>
+  </header>
+
+ <section id="menu" class="menu-section">
+    <div class="menu-grid">
+      <!-- Espresso -->
+      <div class="menu-item">
+        <img src="expressoo.jpeg" alt="Espresso">
+        <div class="menu-info">
+          <h3>Espresso</h3>
+          <p>Rp 20.000</p>
+          <button class="btn-order" onclick="openPopup('expressoo.jpeg','Espresso','Espresso adalah kopi pekat dengan aroma kuat, dibuat dari biji kopi premium.')">Pesan Sekarang</button>
+        </div>
+      </div>
+      <!-- Latte -->
+      <div class="menu-item">
+        <img src="lt.jpeg" alt="Latte">
+        <div class="menu-info">
+          <h3>Latte</h3>
+          <p>Rp 25.000</p>
+          <button class="btn-order" onclick="openPopup('lt.jpeg','Latte','Latte adalah campuran espresso dan susu yang creamy.')">Pesan Sekarang</button>
+        </div>
+      </div>
+      <!-- Cappuccino -->
+      <div class="menu-item">
+        <img src="cappucino.jpeg" alt="Cappuccino">
+        <div class="menu-info">
+          <h3>Cappuccino</h3>
+          <p>Rp 24.000</p>
+          <button class="btn-order" onclick="openPopup('cappucino.jpeg','Cappuccino','Cappuccino memiliki keseimbangan sempurna antara espresso, susu, dan busa.')">Pesan Sekarang</button>
+        </div>
+      </div>
+      <!-- Americano -->
+      <div class="menu-item">
+        <img src="amc.jpeg" alt="Americano">
+        <div class="menu-info">
+          <h3>Americano</h3>
+          <p>Rp 22.000</p>
+          <button class="btn-order" onclick="openPopup('amc.jpeg','Americano','Americano adalah espresso yang diencerkan dengan air panas.')">Pesan Sekarang</button>
+        </div>
+      </div>
+      <!-- Mocha -->
+      <div class="menu-item">
+        <img src="mochaa.jpeg" alt="Mocha">
+        <div class="menu-info">
+          <h3>Mocha</h3>
+          <p>Rp 26.000</p>
+          <button class="btn-order" onclick="openPopup('mochaa.jpeg','Mocha','Mocha memadukan espresso dengan coklat dan susu lembut.')">Pesan Sekarang</button>
+        </div>
+      </div>
+      <!-- Macchiato -->
+      <div class="menu-item">
+        <img src="machaito.jpeg" alt="Macchiato">
+        <div class="menu-info">
+          <h3>Macchiato</h3>
+          <p>Rp 24.000</p>
+          <button class="btn-order" onclick="openPopup('machaito.jpeg','Macchiato','Macchiato adalah espresso dengan sedikit busa susu.')">Pesan Sekarang</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-content">
+    <h2 id="popupTitle"></h2>
+    <img id="popupImage" src="" alt="">
+    <p id="popupDescription"></p>
+
+    <input type="text" id="name" placeholder="Nama Anda">
+    <input type="number" id="quantity" placeholder="Jumlah Pesanan" min="1" value="1">
+
+    <div class="popup-buttons">
+      <button class="btn-back" onclick="closePopup()">Kembali</button>
+      <button class="btn-pesan" onclick="submitOrder()">Pesan Sekarang</button>
+    </div>
+  </div>
+  </div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <img src="Kopi kita logo 2.png" alt="Kopi Kita Logo" class="footer-logo">
+      <p>Menemani harimu dengan cita rasa kopi terbaik. Kopi Kita, pilihan kopi lokal berkualitas.</p>
+    </div>
+    <div class="footer-column">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="tentangkami.html">Tentang Kami</a></li>
+        <li><a href="#">Hubungi Kami</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Ikuti Kami</h4>
+      <div class="sosial-media">
+        <a href="#"><img src="icon-facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="icon-instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="icon-twitter.svg" alt="Twitter"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+   &copy; 2025 Kelompok 5. Kopi Kita
+  </div>
+</footer>
+  <script>
+   function openPopup(image, title, description) {
+  document.getElementById('popupImage').src = image;
+  document.getElementById('popupTitle').innerText = title;
+  document.getElementById('popupDescription').innerText = description;
+  document.getElementById('popup').style.display = 'flex';
+}
+
+function submitOrder() {
+  const name = document.getElementById('name').value.trim();
+  const qty = document.getElementById('quantity').value;
+  if (name && qty > 0) {
+    alert(`Terima kasih sudah membeli, ${name}! Anda memesan ${qty} ${document.getElementById('popupTitle').innerText}.`);
+    closePopup();
+  } else {
+    alert("Mohon isi nama dan jumlah pesanan dengan benar.");
+  }
+}
+
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
+  </script>
+</body>
+</html>
